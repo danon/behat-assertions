@@ -1,2 +1,5 @@
 # Project
 .idea/
+
+# Composer
+vendor/

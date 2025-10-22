@@ -1,0 +1,15 @@
+{
+  "autoload": {
+    "psr-4": {
+      "Danon\\BehatAssertion\\": "src/"
+    }
+  },
+  "require-dev": {
+    "behat/behat": "^3.25",
+    "phpunit/phpunit": "^12.4",
+    "beberlei/assert": "^3.3"
+  },
+  "require": {
+    "webmozart/assert": "^1.12"
+  }
+}
