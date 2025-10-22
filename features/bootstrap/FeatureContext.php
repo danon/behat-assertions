@@ -13,13 +13,17 @@ use Danon\BehatAssertion\ValueObject;
 class FeatureContext implements Context {
     private AssertionLibrary $assert;
 
-    public function __construct()
-    {
-        $this->assert = match (getenv('BEHAT_ASSERTION_LIBRARY')) {
+    public function __construct() {
+        $this->assert = $this->assertionLibrary();
+    }
+
+    private function assertionLibrary(): AssertionLibrary {
+        return match (\getEnv('BEHAT_ASSERTION_LIBRARY')) {
+            'phpunit'   => new PhpUnitAssertionLibrary(),
             'webmozart' => new WebmozartAssertionLibrary(),
-            'beberlei' => new BeberleiAssertionLibrary(),
-            'ouzo' => new OuzoGoodiesAssertionLibrary(),
-            default => new PhpUnitAssertionLibrary(),
+            'beberlei'  => new BeberleiAssertionLibrary(),
+            'ouzo'      => new OuzoGoodiesAssertionLibrary(),
+            default     => new PhpUnitAssertionLibrary(),
         };
     }
 

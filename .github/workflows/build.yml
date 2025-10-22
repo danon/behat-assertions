@@ -9,17 +9,17 @@ jobs:
       fail-fast: false
       matrix:
         assertions:
-          - beberlei
-          - ouzo
           - phpunit
           - webmozart
+          - beberlei
+          - ouzo
     steps:
       - uses: actions/checkout@v4
 
       - uses: shivammathur/setup-php@v2
         with:
           php-version: 8.4
-          ini-file: "development"
+          ini-file: 'development'
           coverage: none
 
       - run: composer install
