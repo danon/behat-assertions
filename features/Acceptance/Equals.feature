@@ -1,4 +1,4 @@
-Feature: Planning booking status
+Feature: Assert equals
   In order to compare expected and actual values,
   as a developer test-driving the implementation,
   I need to see the difference of values in the assertion.
