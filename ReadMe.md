@@ -34,3 +34,10 @@ Failed asserting that two arrays are equal.
 
 because they output `---Expected`/`+++Actual` diff, that can be presented in multiple
 lines with IDE support. Not sure we're supposed to output multiple lines in `behat`/`behat`?
+
+### Comparison of value objects
+
+Currently, `phpunit/phpunit`, `webmozart/assert` and `beberlei/assert` compare the same value objects
+as different.
+
+Only `letsdrink/ouzo-goodies` compares two value objects with the same data as the same.
