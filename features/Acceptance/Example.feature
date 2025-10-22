@@ -11,6 +11,10 @@ Feature: Assertions example
     When a test fails due to unexpected result
     Then the assertion returns the item and the array
 
-  Scenario: Compares value objects
+  Scenario: Compares value objects deeply
     When a test fails due to unexpected result
     Then the assertion compares the value object and the array
+
+  Scenario: Compares value objects deeply and strictly
+    When a test fails due to unexpected result
+    Then the assertion compares deeply and strictly

@@ -4,6 +4,6 @@ namespace Danon\BehatAssertion;
 
 readonly class ValueObject {
     public function __construct(
-        public string $value,
+        public string|int $value,
     ) {}
 }

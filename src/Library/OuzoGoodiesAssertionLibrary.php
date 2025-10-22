@@ -2,6 +2,10 @@
 namespace Danon\BehatAssertion\Library;
 
 class OuzoGoodiesAssertionLibrary implements AssertionLibrary {
+    public function __construct() {
+        (new \PHPUnit\TextUI\Configuration\Builder())->build([]);
+    }
+
     public function assertEquals(mixed $expected, mixed $actual): void {
         \Ouzo\Tests\AssertAdapter::assertSame($expected, $actual);
     }

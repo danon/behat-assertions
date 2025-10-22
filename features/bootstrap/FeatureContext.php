@@ -18,6 +18,7 @@ class FeatureContext implements Context {
     }
 
     private function assertionLibrary(): AssertionLibrary {
+        return new OuzoGoodiesAssertionLibrary();
         return match (\getEnv('BEHAT_ASSERTION_LIBRARY')) {
             'phpunit'   => new PhpUnitAssertionLibrary(),
             'webmozart' => new WebmozartAssertionLibrary(),
@@ -45,5 +46,12 @@ class FeatureContext implements Context {
         $this->assert->assertArrayContains(
             new ValueObject('foo'),
             [new ValueObject('foo')]);
+    }
+
+    #[Then('the assertion compares deeply and strictly')]
+    public function theAssertionComparesDeeplyAndStrictly(): void {
+        $this->assert->assertEquals(
+            new ValueObject('12'),
+            [new ValueObject(12)]);
     }
 }
