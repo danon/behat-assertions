@@ -4,18 +4,23 @@ use Behat\Behat\Context\Context;
 use Behat\Step\Then;
 use Behat\Step\When;
 use Danon\BehatAssertion\Library\AssertionLibrary;
+use Danon\BehatAssertion\Library\BeberleiAssertionLibrary;
 use Danon\BehatAssertion\Library\OuzoGoodiesAssertionLibrary;
 use Danon\BehatAssertion\Library\PhpUnitAssertionLibrary;
+use Danon\BehatAssertion\Library\WebmozartAssertionLibrary;
 use Danon\BehatAssertion\ValueObject;
 
 class FeatureContext implements Context {
     private AssertionLibrary $assert;
 
-    public function __construct() {
-        $this->assert = new PhpUnitAssertionLibrary();
-//        $this->assert = new WebmozartAssertionLibrary();
-//        $this->assert = new BeberleiAssertionLibrary();
-//        $this->assert = new OuzoGoodiesAssertionLibrary();
+    public function __construct()
+    {
+        $this->assert = match (getenv('BEHAT_ASSERTION_LIBRARY')) {
+            'webmozart' => new WebmozartAssertionLibrary(),
+            'beberlei' => new BeberleiAssertionLibrary(),
+            'ouzo' => new OuzoGoodiesAssertionLibrary(),
+            default => new PhpUnitAssertionLibrary(),
+        };
     }
 
     #[When('a test fails due to unexpected result')]
