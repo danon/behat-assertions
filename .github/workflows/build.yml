@@ -13,6 +13,7 @@ jobs:
           - webmozart
           - beberlei
           - ouzo
+          - phpunit-comparator
     steps:
       - uses: actions/checkout@v4
 

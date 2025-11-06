@@ -5,12 +5,11 @@
     }
   },
   "require-dev": {
-    "behat/behat": "^3.25",
-    "phpunit/phpunit": "^12.4",
     "beberlei/assert": "^3.3",
-    "letsdrink/ouzo-goodies": "^1.8"
-  },
-  "require": {
+    "behat/behat": "^3.25",
+    "letsdrink/ouzo-goodies": "^1.8",
+    "phpunit/phpunit": "^12.4",
+    "sebastian/comparator": "^7.1",
     "webmozart/assert": "^1.12"
   }
 }
