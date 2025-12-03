@@ -7,7 +7,8 @@ Comparison of assertion libraries, to be used in acceptance tests written in [
 - `webmozart/assert`
 - `beberlei/assert`
 - `letsdrink/ouzo-goodies`
-
+- `sebastian/comparator`
+- `zenstruck/assert`
 
 ## Problems
 
@@ -31,9 +32,8 @@ However, `phpunit/phpunit` and `letsdrink/ouzo-goodies` will show:
 ```
 Failed asserting that two arrays are equal.
 ```
-
-because they output `---Expected`/`+++Actual` diff, that can be presented in multiple
-lines with IDE support. Not sure we're supposed to output multiple lines in `behat`/`behat`?
+and they output `---Expected`/`+++Actual` diff, that can be presented in multiple
+lines with IDE support.
 
 ### Comparison of value objects
 

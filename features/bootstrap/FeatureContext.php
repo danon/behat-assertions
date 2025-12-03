@@ -55,6 +55,6 @@ class FeatureContext implements Context {
     public function theAssertionComparesDeeplyAndStrictly(): void {
         $this->assert->assertEquals(
             new ValueObject('12'),
-            [new ValueObject(12)]);
+            new ValueObject(12));
     }
 }
