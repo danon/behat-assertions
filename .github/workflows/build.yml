@@ -14,6 +14,7 @@ jobs:
           - beberlei
           - ouzo
           - phpunit-comparator
+          - zenstruck
     steps:
       - uses: actions/checkout@v4
 

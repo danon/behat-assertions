@@ -9,6 +9,7 @@ use Danon\BehatAssertion\Library\OuzoGoodiesAssertionLibrary;
 use Danon\BehatAssertion\Library\PhpUnitAssertionLibrary;
 use Danon\BehatAssertion\Library\PhpUnitComparatorLibrary;
 use Danon\BehatAssertion\Library\WebmozartAssertionLibrary;
+use Danon\BehatAssertion\Library\ZenstruckAssertionLibrary;
 use Danon\BehatAssertion\ValueObject;
 
 class FeatureContext implements Context {
@@ -25,7 +26,8 @@ class FeatureContext implements Context {
             'beberlei'           => new BeberleiAssertionLibrary(),
             'ouzo'               => new OuzoGoodiesAssertionLibrary(),
             'phpunit-comparator' => new PhpUnitComparatorLibrary(),
-            default              => new PhpUnitAssertionLibrary(),
+            'zenstruck'          => new ZenstruckAssertionLibrary(),
+            default              => new ZenstruckAssertionLibrary(),
         };
     }
 

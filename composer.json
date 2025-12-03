@@ -10,6 +10,7 @@
     "letsdrink/ouzo-goodies": "^1.8",
     "phpunit/phpunit": "^12.4",
     "sebastian/comparator": "^7.1",
-    "webmozart/assert": "^1.12"
+    "webmozart/assert": "^1.12",
+    "zenstruck/assert": "^1.6"
   }
 }
